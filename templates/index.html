@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HCI Chatbot — An intelligent AI chatbot demonstrating Human-Computer Interaction principles.">
+    <title>JARVIS AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Google Font for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════
+         Main Chat Container
+         ═══════════════════════════════════════════════════ -->
+    <div id="app">
+
+        <!-- Header -->
+        <header id="chat-header">
+            <div class="header-left">
+                <div class="bot-avatar">🤖</div>
+                <div class="header-info">
+                    <h1>JARVIS AI Assistant</h1>
+                    <span class="status-text" id="status-text">Online</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <!-- Voice toggle button -->
+                <button id="voice-toggle-btn" class="icon-btn" title="Toggle Voice Mode" aria-label="Toggle voice mode">
+                    🎙️
+                </button>
+                <!-- Clear chat button -->
+                <button id="clear-btn" class="icon-btn" title="Clear Chat History" aria-label="Clear chat history">
+                    🗑️
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Messages Area -->
+        <div id="chat-messages">
+            <!-- Welcome message -->
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hello boss 😎, JARVIS online. How can I assist you today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing indicator -->
+        <div id="typing-indicator" class="hidden">
+            <div class="message-avatar">🤖</div>
+            <div class="typing-dots">
+                <span></span><span></span><span></span>
+            </div>
+            <span class="typing-label">Bot is typing…</span>
+        </div>
+
+        <!-- Input Area -->
+        <div id="chat-input-area">
+            <div class="input-wrapper">
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Type your message…"
+                    autocomplete="off"
+                    aria-label="Type your message"
+                />
+                <!-- Mic button (inside input) -->
+                <button id="mic-btn" class="input-icon-btn hidden" title="Speak" aria-label="Speak">
+                    🎤
+                </button>
+            </div>
+            <button id="send-btn" title="Send Message" aria-label="Send message">
+                ➤
+            </button>
+        </div>
+
+        <!-- Sentiment badge (floating) -->
+        <div id="sentiment-badge" class="hidden"></div>
+
+        <!-- Voice status toast -->
+        <div id="voice-toast" class="hidden"></div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
